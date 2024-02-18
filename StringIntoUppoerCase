@@ -1,0 +1,26 @@
+package Assignment;
+import java.util.stream.*;
+import java.util.*;
+public class StringIntoUpperClass {
+public static void main(String[] args) {
+	Scanner s= new Scanner(System.in);
+	System.out.println("enter the strings you want to change to uppercase");
+	Stream<String> values = Stream.of(s.next(),s.next(),s.next(),s.next());
+	List<String> upperCaseValues =  values.map(String::toUpperCase).collect(Collectors.toList());
+	System.out.println("the Uppercase of the given value is");
+	upperCaseValues.forEach(System.out::println);
+	
+}
+}
+
+OUTPUT:
+enter the strings you want to change to uppercase
+aBc
+cdE
+Owss
+ere
+the Uppercase of the given value is
+ABC
+CDE
+OWSS
+ERE
