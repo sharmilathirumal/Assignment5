@@ -1,0 +1,25 @@
+package Assignment;
+import java.util.*;
+import java.util.stream.*;
+public class CheckEmptyString {
+public static void main(String[] args) {
+	Scanner s= new Scanner(System.in);
+	List<String> listOfStrings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
+	List<String> nonEmptyString =getNonEmptyString(listOfStrings);
+	System.out.println("the list of nonempty strings in the given list is:");
+	nonEmptyString.forEach(System.out::println);
+}
+
+public static List<String> getNonEmptyString(List<String> list){
+	return list.stream().filter(str -> !str.isEmpty()).toList();
+}
+}
+
+
+OUTPUT:
+the list of nonempty strings in the given list is:
+abc
+bc
+efg
+abcd
+jkl
