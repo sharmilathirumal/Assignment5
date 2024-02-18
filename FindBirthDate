@@ -1,0 +1,20 @@
+package Assignment;
+import java.time.*;
+import java.util.*;
+public class CalculateAge {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter your bithdate (yyyy-dd-mm):");
+	String input = s.next();
+	
+	LocalDate bithDate = LocalDate.parse(input);	
+	LocalDate currentDate = LocalDate.now();
+	Period age = Period.between(bithDate, currentDate);
+	System.out.println("Your age is:"+" "+age.getYears()+" "+"years,"+" "+age.getMonths()+" "+"months,"+" "+"and"+" "+age.getDays()+" "+"days");
+}
+}
+
+OUTPUT:
+Enter your bithdate (yyyy-dd-mm):
+2001-09-10
+Your age is: 22 years, 5 months, and 8 days
